@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2513" viewBox="0 0 348 319.56" version="1.0">
+  <g id="layer1" transform="translate(-188.85 -324.01)">
+    <g id="g3200" transform="matrix(1.8805 0 0 1.8805 -12.787 -146.64)">
+      <path id="path3183" transform="translate(-14.286 -65)" d="m287.14 412.36a72.857 72.857 0 1 1 -145.71 0 72.857 72.857 0 1 1 145.71 0z"/>
+      <path id="path3185" transform="matrix(.83033 .55727 -.31241 .46549 265.63 212.35)" fill="#fff" d="m25 306.29a4.2857 35.357 0 1 1 -8.571 0 4.2857 35.357 0 1 1 8.571 0z"/>
+      <path id="path3187" transform="matrix(.73708 -.50472 .54399 .68388 -2.9581 123)" fill="#fff" d="m25 306.29a4.2857 35.357 0 1 1 -8.571 0 4.2857 35.357 0 1 1 8.571 0z"/>
+      <path id="path3189" transform="translate(-16.429 -8.5714)" fill="#fff" d="m224.29 355.93a7.8571 7.8571 0 1 1 -15.72 0 7.8571 7.8571 0 1 1 15.72 0z"/>
+      <path id="path3194" d="m282.66 314.97c14.17-16.21 12.52-40.88-3.7-55.05-16.21-14.18-40.88-12.52-55.05 3.69"/>
+      <path id="path3196" transform="translate(-25 -95.714)" d="m224.29 355.93a7.8571 7.8571 0 1 1 -15.72 0 7.8571 7.8571 0 1 1 15.72 0z"/>
+      <path id="path3198" d="m116.87 314.97c-14.18-16.21-12.52-40.88 3.69-55.05 16.22-14.18 40.88-12.52 55.05 3.69"/>
+    </g>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Alarm clock</dc:title>
+        <dc:date>2008-03-05T20:48:27</dc:date>
+        <dc:description>clip art, clipart, image, media, public domain, silhouette, silhouette, svg, </dc:description>
+        <dc:source>http://openclipart.org/detail/15483/alarm-clock-by-risto_pekkala</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>risto_pekkala</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>image</rdf:li>
+            <rdf:li>media</rdf:li>
+            <rdf:li>public domain</rdf:li>
+            <rdf:li>silhouette</rdf:li>
+            <rdf:li>svg</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

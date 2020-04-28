@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3C89D0;">
+    <h1 class="navbar-brand">
+      <img id="icon" src="{{ url_for('static', filename='images/law.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="law icon">
+      Expungement Navigator
+    </h1>
+  </nav>
+
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-10 py-3 pl-5">
+        <p>Welcome to the Expungement Navigator. In law, expungement refers to the process of removing or sealing a criminal record from state or federal record. Click a state to read information on its expungement law and to find out what records are eligible for expungement.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-lg-6 mx-md-auto mx-lg-auto">
+        <div class="text-white p-4">  
+          <!-- add some goodies to the form - for help, see
+          https://pythonhosted.org/Flask-Bootstrap/forms.html
+          -->
+          {{ wtf.quick_form(form, action=url_for("state_detail"), method="post") }}
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer text-white text-wrap py-1" style="position: absolute;">
+    <div class="container">
+      <p>This app is an assignment for JOU4369: Advanced Web Apps at the University of Florida.</p>
+    </div>
+  </footer>
+
+{% endblock %}

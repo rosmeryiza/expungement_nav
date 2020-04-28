@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3C89D0;">
+
+    <h1 class="navbar-brand">
+      <img id="icon" src="{{ url_for('static', filename='images/law.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="law icon">
+      Expungement Navigator
+    </h1>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Explore Other States</a>
+          <!-- notice how the URL in the link above is rendered for Flask - it needs to name the FUNCTION, not the route - and NOT the template! -->
+        </li>
+      </ul>
+    </div>
+    
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-lg-6 mx-md-auto mx-lg-auto">
+
+        <!-- the variable the_state was passed to the template in the Flask route -->
+        <h2 class="mt-5 display-3">What can be expunged in {{ the_state.State }}?</h2>
+
+        {# Check if there is law #}
+        {% if the_state.Law == 'No' %}
+            <p>There is currently no expungement law in {{ the_state.State }}.</p>
+        {% elif the_state.Law == 'Yes' %}
+          <div class="container p-2 mt-2 mb-4">
+              
+              {# Effective dates #}
+              <div id="law" class="container mt-4 pt-4">
+                <div class="row">
+                  {% if the_state.FirstEffective %}
+                    <div class="col-2">
+                      <img id="icon" src="static/images/gavel.svg" width="60" height="60" class="d-inline-block align-top" alt="gavel icon">
+                    </div>
+                    <div class="col">
+                      <p>The expungement law was established on {{ the_state.FirstEffective }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="row">
+                  {% if the_state.LatestAmendment %}
+                    <div class="col-2">
+                      <img id="icon" src="static/images/gavel.svg" width="60" height="60" class="d-inline-block align-top" alt="gavel icon">
+                    </div>
+                    <div class="col">
+                      <p>The expungement law was most recently amended on {{ the_state.LatestAmendment }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              <hr>
+              <br>
+
+              <div id="fee" class="container mt-4 pt-4">
+                <div class="row">
+                    <div class="col-2">
+                      <img id="icon" src="static/images/money.svg" width="60" height="60" class="d-inline-block align-top" alt="money icon">
+                    </div>
+                    <div class="col">
+                      <h3>Is there a fee?</h3>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                  {# Check fee and how much #}
+                  {% if the_state.Fee == 'No' %}
+                    <p>There is no fee.</p>
+                  {% elif the_state.Fee == 'Yes' %}
+                    <div class="container">
+                      {% if the_state.FeeMin == the_state.FeeMax %}
+                        <p>Fee: {{ the_state.FeeMin }}</p>
+                      {% else %}
+                        <p>Fee Minimum: {{ the_state.FeeMin }}</p>
+                        <p>Fee Maximum: {{ the_state.FeeMax }}</p>
+                      {% endif %}
+                    </div>
+                  {% else %}
+                    <p>Fee not applicable.</p>
+                  {% endif %}
+                </div>
+              </div>
+
+              <hr>
+              <br>
+              
+              <div id="crime" class="container my-4 py-4">
+                <div class="row">
+                    <div class="col-2">
+                      <img id="icon" src="static/images/crime.svg" width="60" height="60" class="d-inline-block align-top" alt="crime icon">
+                    </div>
+                    <div class="col">
+                      <h3>What crimes can be expunged?</h3>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                  {# Check eligible crimes #}
+                  <ul class="list-group">
+                    {% if the_state.DrugOffenses %}
+                      <li class="list-group-item">Drug offenses: {{ the_state.DrugOffenses }}</li>
+                    {% endif %}
+                    {% if the_state.Misdemeanors %}
+                      <li class="list-group-item">Misdemeanors: {{the_state.Misdemeanors}} </li>
+                    {% endif %}
+                    {% if the_state.Felonies %}
+                      <li class="list-group-item">Felonies: {{the_state.Felonies}} </li>
+                    {% endif %}
+                    {% if the_state.ViolentFelonies %}
+                      <li class="list-group-item">Violent felonies: {{the_state.ViolentFelonies}} </li>
+                    {% endif %}
+                    {% if the_state.SexTrafficking %}
+                      <li class="list-group-item">Crimes committed while a victim of sex trafficking: {{the_state.SexTrafficking}} </li>
+                    {% endif %}
+                  </ul>
+                </div>
+              </div>
+
+              <hr>
+              <br>
+
+              <div id="time" class="container my-4 py-4">
+                <div class="row">
+                    <div class="col-2">
+                      <img id="icon" src="static/images/time.svg" width="60" height="60" class="d-inline-block align-top" alt="crime icon">
+                    </div>
+                    <div class="col">
+                      <h3>Is there a waiting period?</h3>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                  {# Check wait time #}
+                  {% if the_state.WaitTime %}
+                    <p> {{ the_state.WaitTime }} </p>
+                  {%else%}
+                    <p>Not applicable.</p>
+                  {% endif %}
+                  </ul>
+                </div>
+              </div>
+
+              <hr>
+              <br>
+
+              <div class="text-center">
+                <a href="{{ the_state.StatuteLink }}" target="_blank" role="button" class="btn btn-light btn-lg text-uppercase mx-auto">See the statute</a>
+              </div>
+
+          </div>
+        {% endif %} 
+      </div>
+    </div>
+  </div>
+  
+
+  <footer class="footer text-white text-wrap">
+    <div class="container">
+      <p>Created by Rosmery Izaguirre</a></p>
+    </div>
+  </footer>
+
+{% endblock %}
